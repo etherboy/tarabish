@@ -7,13 +7,13 @@
  *
  */
 
-#import "Card.h"
+#import "FJVCard.h"
 
-@class Player;
-@class Deck;
+@class FJVPlayer;
+@class FJVDeck;
 
 
-@interface TrumpCallRule : NSObject
+@interface FJVTrumpCallRule : NSObject
 {
 	unsigned short requiredTrumpMask;
 	int requiredTrumpCount;
@@ -46,16 +46,15 @@
 @end
 
 
-@interface MasterMind : NSObject
+@interface FJVMasterMind : NSObject
 {
-	Deck* deck;
+	FJVDeck* deck;
 	NSArray* trumpCallRules;
 }
 
--(id)initWithDeck:(Deck*)aDeck trumpCallRules:(NSArray*)aRuleCollection;
--(void)dealloc;
+-(id)initWithDeck:(FJVDeck*)aDeck trumpCallRules:(NSArray*)aRuleCollection;
 
--(TCardSuit)callTrumpForPlayer:(Player*)player forced:(BOOL)forced;
+-(TCardSuit)callTrumpForPlayer:(FJVPlayer*)player forced:(BOOL)forced;
 
 @end
 

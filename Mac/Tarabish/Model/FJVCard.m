@@ -3,10 +3,10 @@
 //  Tarabish
 //
 //  Created by Fritz Vander Heide on 27/06/07.
-//  Copyright 2007 __MyCompanyName__. All rights reserved.
+//  Copyright 2007 AppleTrek. All rights reserved.
 //
 
-#import "Card.h"
+#import "FJVCard.h"
 
 static NSString* cardRankDesc[13] = {
 	@"Two", @"Three", @"Four", @"Five", @"Six", @"Seven", @"Eight", @"Nine",
@@ -36,7 +36,7 @@ const unsigned short cardMask[13] = {	0x1000,
 										0x0001 };
 
 
-@implementation Card
+@implementation FJVCard
 
 - (id)initCardWithRank: (TCardRank)inRank suit: (TCardSuit)inSuit
 {

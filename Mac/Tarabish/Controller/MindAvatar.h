@@ -8,16 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 #import "PlayerAvatar.h"
-#import "MasterMind.h"
+#import "FJVMasterMind.h"
 
 
-@interface BTMindAvatar : BTPlayerAvatar 
+@interface FJVMindAvatar : FJVPlayerAvatar 
 {
-	MasterMind* mind;
+	FJVMasterMind* mind;
 }
 
 - (id)init;
-- (void)setMind:(MasterMind*) aMind;
+- (void)setMind:(FJVMasterMind*) aMind;
 
 - (void)callTrumpOpen:(BOOL) forced;
 - (void)callTrumpClose:(id) sender;
@@ -26,7 +26,5 @@
 
 //- (void)playCardOpen;
 //- (void)playCardClose:(const CCard* const) card;
-
-- (void)dealloc;
 
 @end

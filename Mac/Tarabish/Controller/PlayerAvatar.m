@@ -1,8 +1,8 @@
 #import "PlayerAvatar.h"
-#import "Card.h"
-#import "Player.h"
+#import "FJVCard.h"
+#import "FJVPlayer.h"
 
-@implementation BTPlayerAvatar
+@implementation FJVPlayerAvatar
 
 - (id)init
 {
@@ -16,7 +16,7 @@
 	return self;
 }
 
-- (void)setPlayer:(Player*) aPlayer
+- (void)setPlayer:(FJVPlayer*) aPlayer
 {
 	player = aPlayer;
 
@@ -24,7 +24,7 @@
 	[hand reloadData];
 }
 
-- (void)setMind:(MasterMind*)aMind
+- (void)setMind:(FJVMasterMind*)aMind
 {
 }
 
@@ -42,7 +42,7 @@
 - (void)callTrumpClose: (id)sender
 {
 	TCardSuit trump = (TCardSuit)[sender intValue];
-	NSString* trumpDesc = trump != NONE ? [Card suitDescription: trump] : @"Pass";
+	NSString* trumpDesc = trump != NONE ? [FJVCard suitDescription: trump] : @"Pass";
 	
 	[player callTrumpClose: trump];
 	[self say: trumpDesc];
@@ -76,9 +76,9 @@
 }
 
 //Table View Methods
-- (int)numberOfRowsInTableView:(NSTableView *)aTableView
+- (NSUInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {	
-	int cardCount = 0;
+	NSUInteger cardCount = 0;
 	
 	if(player)
 	{
@@ -91,11 +91,6 @@
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex
 {
 	return [[[player hand] objectAtIndex: rowIndex] description];  
-}
-
-- (void)dealloc
-{	
-	[super dealloc];
 }
 
 @end

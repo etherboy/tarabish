@@ -9,6 +9,6 @@
 #import "InteractiveAvatar.h"
 
 
-@implementation BTInteractiveAvatar
+@implementation FJVInteractiveAvatar
 
 @end

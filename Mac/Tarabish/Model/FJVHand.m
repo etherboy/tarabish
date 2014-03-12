@@ -3,16 +3,16 @@
 //  Tarabish
 //
 //  Created by Fritz Vander Heide on 29/06/07.
-//  Copyright 2007 __MyCompanyName__. All rights reserved.
+//  Copyright 2007 AppleTrek. All rights reserved.
 //
 
-#import "Hand.h"
-#import "Deck.h"
-#import "Player.h"
+#import "FJVHand.h"
+#import "FJVDeck.h"
+#import "FJVPlayer.h"
 
-@implementation Hand
+@implementation FJVHand
 
--(id)initWithPlayers: (NSArray*)aPlayers deck: (Deck*)aDeck
+-(id)initWithPlayers: (NSArray*)aPlayers deck: (FJVDeck*)aDeck
 {
 	self = [super init];
 	
@@ -41,15 +41,15 @@
 
 -(void)dealCards
 {
-	int i = 0;
+	NSUInteger i = 0;
 	NSMutableArray* eligablePlayers = [NSMutableArray arrayWithArray: players];
 	
-	int cardCount = [deck cardCount];
+	NSUInteger cardCount = [deck cardCount];
 	
 	for(i = 0; i < cardCount; i++)
 	{
 		int luckyIndex = rand() % [eligablePlayers count];		
-		Player* luckyPlayer = [eligablePlayers objectAtIndex: luckyIndex];
+		FJVPlayer* luckyPlayer = [eligablePlayers objectAtIndex: luckyIndex];
 		if(![luckyPlayer acceptCard: [deck cardAtIndex: i]])
 		{
 			[eligablePlayers removeObjectAtIndex: luckyIndex];
@@ -81,11 +81,6 @@
 -(int)dealerIndex
 {
 	return dealerIndex;
-}
-
--(void)dealloc
-{
-	[super dealloc];
 }
 
 @end

@@ -1,6 +1,6 @@
-#import "TarabishController.h"
+#import "FJVTarabishController.h"
 
-@implementation TarabishController
+@implementation FJVTarabishController
 
 - (id)init
 {
@@ -8,7 +8,7 @@
 	
 	if(self!=nil)
 	{
-		game = [[TarabishMatch alloc] init];
+		game = [[FJVTarabishMatch alloc] init];
 	}
 	
 	return self;
@@ -41,13 +41,6 @@
 	[pa4 say: @""];
 	
 	[game beginHand];
-}
-
-- (void)dealloc
-{
-	[game release];
-	
-	[super dealloc];
 }
 
 @end

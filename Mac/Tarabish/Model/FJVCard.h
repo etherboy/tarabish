@@ -3,7 +3,7 @@
 //  Tarabish
 //
 //  Created by Fritz Vander Heide on 27/06/07.
-//  Copyright 2007 __MyCompanyName__. All rights reserved.
+//  Copyright 2007 AppleTrek. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
@@ -15,7 +15,7 @@ typedef enum { DIAMOND, SPADE, HEART, CLUB, NONE } TCardSuit;
 
 const unsigned short cardMask[13]; 
 
-@interface Card : NSObject 
+@interface FJVCard : NSObject 
 {
 @private
 	TCardRank rank;

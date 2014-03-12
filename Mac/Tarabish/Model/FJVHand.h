@@ -3,31 +3,30 @@
 //  Tarabish
 //
 //  Created by Fritz Vander Heide on 29/06/07.
-//  Copyright 2007 __MyCompanyName__. All rights reserved.
+//  Copyright 2007 AppleTrek. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
-#import "Card.h"
+#import "FJVCard.h"
 
-@class Player;
-@class Deck;
+@class FJVPlayer;
+@class FJVDeck;
 
 
-@interface Hand : NSObject 
+@interface FJVHand : NSObject 
 {
 	TCardSuit trump;
 	int dealerIndex;
 	int trumpCallerIndex;
 	int activePlayerIndex;
 	NSArray* players;
-	Deck* deck;
+	FJVDeck* deck;
 }
 
--(id)initWithPlayers: (NSArray*)aPlayers deck: (Deck*)aDeck ;
+-(id)initWithPlayers: (NSArray*)aPlayers deck: (FJVDeck*)aDeck ;
 -(void)dealCards;
 -(void)trumpCalled: (TCardSuit)trump;
 -(void)initiateHand: (int)aDealerIndex;
 -(int)dealerIndex;
--(void)dealloc;
 
 @end

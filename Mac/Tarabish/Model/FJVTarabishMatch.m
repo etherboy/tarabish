@@ -3,13 +3,13 @@
 //  Tarabish
 //
 //  Created by Fritz Vander Heide on 29/06/07.
-//  Copyright 2007 __MyCompanyName__. All rights reserved.
+//  Copyright 2007 AppleTrek. All rights reserved.
 //
 
-#import "TarabishMatch.h"
+#import "FJVTarabishMatch.h"
 
 
-@implementation TarabishMatch
+@implementation FJVTarabishMatch
 
 - (id)init
 {
@@ -17,13 +17,13 @@
 	
 	if(self!=nil)
 	{
-		deck = [[Deck alloc] init];
+		deck = [[FJVDeck alloc] init];
 		
 		players = [[NSArray alloc] initWithObjects: 
-				   [[[Player alloc] initWithName: @"Fred" game: self] autorelease],
-				   [[[Player alloc] initWithName: @"Mary" game: self] autorelease],
-				   [[[Player alloc] initWithName: @"Mike" game: self] autorelease],
-				   [[[Player alloc] initWithName: @"Lucy" game: self] autorelease],
+				   [[FJVPlayer alloc] initWithName: @"Fred" game: self],
+				   [[FJVPlayer alloc] initWithName: @"Mary" game: self],
+				   [[FJVPlayer alloc] initWithName: @"Mike" game: self],
+				   [[FJVPlayer alloc] initWithName: @"Lucy" game: self],
 				   nil];
 		
 		hands = [[NSMutableArray alloc] init];
@@ -35,7 +35,7 @@
 		
 		for(NSDictionary* rawRule in rawRules)
 		{
-			TrumpCallRule* rule = [[TrumpCallRule alloc] initWithRequiredTrump: [rawRule objectForKey: @"RequiredTrump"]
+			FJVTrumpCallRule* rule = [[FJVTrumpCallRule alloc] initWithRequiredTrump: [rawRule objectForKey: @"RequiredTrump"]
 															   additionalTrump: [[rawRule objectForKey: @"AdditionalTrump"] intValue]
 														requiredPrimaryOutside: [rawRule objectForKey: @"RequiredPrimaryOutside"]
 													  additionalPrimaryOutside: [[rawRule objectForKey: @"AdditionalPrimaryOutside"] intValue]
@@ -43,31 +43,20 @@
 															totalOutsidePoints: [[rawRule objectForKey: @"TotalOutsidePoints"] intValue]];
 			
 			[cookedRules addObject: rule];
-			[rule release];
 		}
 		
-		mind = [[MasterMind alloc] initWithDeck: deck trumpCallRules: cookedRules];
+		mind = [[FJVMasterMind alloc] initWithDeck: deck trumpCallRules: cookedRules];
 		
-		srand(time(0));
+		srand((unsigned int)time(0));
 	}
 	
 	return self;
 }
 
-- (void)dealloc
-{
-	[deck release];
-	[players release];
-	[hands release];
-	[mind release];
-	
-	[super dealloc];
-}
-
 - (void)beginHand
 {
 	[players makeObjectsPerformSelector: @selector(clearHand)];
-	Hand* newHand = [[Hand alloc] initWithPlayers: players deck: deck];
+	FJVHand* newHand = [[FJVHand alloc] initWithPlayers: players deck: deck];
 	
 	int dealerIndex = 0;
 	
@@ -78,10 +67,9 @@
 	
 	[newHand initiateHand: dealerIndex]; 
 	[hands addObject: newHand];
-	[newHand release];
 }
 
-- (Hand*)currentHand
+- (FJVHand*)currentHand
 {
 	return [hands objectAtIndex: [hands count] - 1];
 }
@@ -91,7 +79,7 @@
 	return [NSArray arrayWithArray: players];
 }
 
-- (MasterMind*)masterMind
+- (FJVMasterMind*)masterMind
 {
 	return mind;
 }

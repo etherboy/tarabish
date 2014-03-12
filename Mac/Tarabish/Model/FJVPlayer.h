@@ -7,27 +7,27 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "Card.h"
+#import "FJVCard.h"
 #import "PlayerAvatar.h"
 
-@class TarabishMatch;
+@class FJVTarabishMatch;
 
-@interface Player : NSObject 
+@interface FJVPlayer : NSObject 
 {
 @private
 	NSString* name;
 	NSMutableArray* hand;
 	NSMutableArray* kitty;
-	TarabishMatch* game;
-	BTPlayerAvatar* avatar;
+	FJVTarabishMatch* game;
+	FJVPlayerAvatar* avatar;
 	
 	NSArray* runs;
 	NSArray* bella;
 }
 
--(id)initWithName: (NSString*)aName game: (TarabishMatch*)aGame;
--(void)setAvatar: (BTPlayerAvatar*)anAvatar;
--(BOOL)acceptCard: (Card*)aCard;
+-(id)initWithName: (NSString*)aName game: (FJVTarabishMatch*)aGame;
+-(void)setAvatar: (FJVPlayerAvatar*)anAvatar;
+-(BOOL)acceptCard: (FJVCard*)aCard;
 -(void)clearHand;
 -(NSString*)name;
 -(NSArray*)hand;
@@ -36,7 +36,5 @@
 -(void)callTrumpClose: (TCardSuit)trump;
 -(void)trumpCalled;
 -(void)playCardOpen;
-
-- (void)dealloc;
 
 @end

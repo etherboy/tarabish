@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "PlayerAvatar.h"
 
-@interface BTInteractiveAvatar : BTPlayerAvatar 
+@interface FJVInteractiveAvatar : FJVPlayerAvatar 
 {
 
 }

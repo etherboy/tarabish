@@ -9,7 +9,7 @@
 #import "MindAvatar.h"
 
 
-@implementation BTMindAvatar
+@implementation FJVMindAvatar
 
 - (id)init
 {
@@ -23,7 +23,7 @@
 	return self;
 }
 
-- (void)setMind: (MasterMind*)aMind
+- (void)setMind: (FJVMasterMind*)aMind
 {
 	mind = aMind;
 }
@@ -32,13 +32,13 @@
 {
 	if(mind)
 	{
-		[NSTimer scheduledTimerWithTimeInterval: 1.0 target: self selector: @selector(callTrumpClose:) userInfo: [NSNumber numberWithBool: forced] repeats: NO];
+		[NSTimer scheduledTimerWithTimeInterval: 1.0 target: self selector: @selector(callTrumpClose:) userInfo: @(forced) repeats: NO];
 	}
 }
 
 - (void)callTrumpClose: (id)sender
 {
-	NSNumber* trump = [NSNumber numberWithInt: [mind callTrumpForPlayer: player forced: [[sender userInfo] boolValue]]];
+	NSNumber* trump = [NSNumber numberWithInt: [mind callTrumpForPlayer: player forced: [(NSNumber*)[sender userInfo] boolValue]]];
 	 
 	[super callTrumpClose: trump];
 }
@@ -65,10 +65,5 @@
 //{
 //	mind->FindRuns(player->Hand())
 //}
-
-- (void)dealloc
-{	
-	[super dealloc];
-}
 
 @end

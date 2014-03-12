@@ -7,11 +7,11 @@
  *
  */
 
-#import "MasterMind.h"
-#import "Deck.h"
-#import "Player.h"
+#import "FJVMasterMind.h"
+#import "FJVDeck.h"
+#import "FJVPlayer.h"
 
-@implementation TrumpCallRule
+@implementation FJVTrumpCallRule
 
 -(id)initWithRequiredTrump: (NSString*)reqTrump 
 		   additionalTrump: (int)addTrump
@@ -27,15 +27,15 @@
 		int i = 0;
 		
 		for(i = 0; i < [reqTrump length]; i++)
-			requiredTrumpMask |= cardMask[[Card rankFromCharacter: [reqTrump characterAtIndex: i]]];
+			requiredTrumpMask |= cardMask[[FJVCard rankFromCharacter: [reqTrump characterAtIndex: i]]];
 		requiredTrumpCount = [reqTrump length];
 		additionalTrump = addTrump;
 		for(i = 0; i < [reqPrimary length]; i++)
-			requiredPrimaryOutsideMask |= cardMask[[Card rankFromCharacter: [reqPrimary characterAtIndex: i]]];
+			requiredPrimaryOutsideMask |= cardMask[[FJVCard rankFromCharacter: [reqPrimary characterAtIndex: i]]];
 		requiredPrimaryOutsideCount = [reqPrimary length];
 		additionalPrimaryOutside = addPrimary;
 		for(i = 0; i < [reqSecondary length]; i++)
-			requiredSecondaryOutsideMask |= cardMask[[Card rankFromCharacter: [reqSecondary characterAtIndex: i]]];
+			requiredSecondaryOutsideMask |= cardMask[[FJVCard rankFromCharacter: [reqSecondary characterAtIndex: i]]];
 		requiredSecondaryOutsideCount = [reqSecondary length];
 		totalOutsidePoints = outsidePoints;
 	}
@@ -55,29 +55,22 @@
 
 @end
 
-@implementation MasterMind
+@implementation FJVMasterMind
 
--(id)initWithDeck:(Deck*)aDeck trumpCallRules:(NSArray*)aRuleCollection
+-(id)initWithDeck:(FJVDeck*)aDeck trumpCallRules:(NSArray*)aRuleCollection
 {
 	self = [super init];
 	
 	if(self)
 	{
 		deck = aDeck;
-		trumpCallRules = [aRuleCollection retain];
+		trumpCallRules = aRuleCollection;
 	}
 	
 	return self;
 }
 
--(void)dealloc
-{
-	[trumpCallRules release];
-	
-	[super dealloc];
-}
-
--(TCardSuit)callTrumpForPlayer:(Player*)player forced:(BOOL)forced
+-(TCardSuit)callTrumpForPlayer:(FJVPlayer*)player forced:(BOOL)forced
 {
 	struct SSuitStats
 	{
@@ -93,7 +86,7 @@
 	
 	for(i = [hand count] - 1; i >= 0; --i)
 	{
-		Card* card = [hand objectAtIndex: i];
+		FJVCard* card = [hand objectAtIndex: i];
 		int suitIndex = [card suit];
 		
 		++suitStatistics[suitIndex].cardCount;
@@ -120,7 +113,7 @@
 		
 		for(k = 0; (ruleMatched[i] == -1) && (k < [trumpCallRules count]); ++k)
 		{
-			TrumpCallRule* rule = [trumpCallRules objectAtIndex: k];
+			FJVTrumpCallRule* rule = [trumpCallRules objectAtIndex: k];
 			
 			if((suitStatistics[i].cardRankMask & rule.requiredTrumpMask) == rule.requiredTrumpMask)
 			{
@@ -200,9 +193,9 @@
 
 -(NSArray*)findBellaInHand:(NSArray*)hand trump:(TCardSuit)trump
 {
-	NSMutableArray* bellaCards = [[[NSMutableArray alloc] init] autorelease] ;
+	NSMutableArray* bellaCards = [[NSMutableArray alloc] init];
 	
-	for(Card* card in hand)
+	for(FJVCard* card in hand)
 	{
 		if(([card suit] == trump) && (([card rank] == KING) || ([card rank] == QUEEN)))
 		{
@@ -220,13 +213,13 @@
 
 -(NSArray*)findRunsInHand:(NSArray*)hand
 {
-	NSMutableArray* runArray = [[[NSMutableArray alloc] init] autorelease];
+	NSMutableArray* runArray = [[NSMutableArray alloc] init];
 	unsigned short binaryHand[4] = {0};
 	int nextEligable[4]= {0};
 	int i = 0;
 	int j = 0;
 
-	for(Card* card in hand)
+	for(FJVCard* card in hand)
 	{
 		binaryHand[[card suit] - 1] |= cardMask[[card rank]];
 	}

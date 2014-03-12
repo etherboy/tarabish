@@ -18,18 +18,17 @@
 		1F24529018BA2027002E4C41 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F24526F18BA2026002E4C41 /* Cocoa.framework */; };
 		1F24529818BA2027002E4C41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F24529618BA2027002E4C41 /* InfoPlist.strings */; };
 		1F24529A18BA2027002E4C41 /* TarabishTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F24529918BA2027002E4C41 /* TarabishTests.m */; };
-		1F2452B318BA20E4002E4C41 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452A518BA20E4002E4C41 /* Card.m */; };
-		1F2452B418BA20E4002E4C41 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452A718BA20E4002E4C41 /* Deck.m */; };
-		1F2452B518BA20E4002E4C41 /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452A918BA20E4002E4C41 /* Hand.m */; };
-		1F2452B618BA20E4002E4C41 /* MasterMind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452AA18BA20E4002E4C41 /* MasterMind.cpp */; };
-		1F2452B718BA20E4002E4C41 /* MasterMind.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452AC18BA20E4002E4C41 /* MasterMind.m */; };
-		1F2452B818BA20E4002E4C41 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452AE18BA20E4002E4C41 /* Player.m */; };
-		1F2452B918BA20E4002E4C41 /* TarabishMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452B018BA20E4002E4C41 /* TarabishMatch.m */; };
-		1F2452BA18BA20E4002E4C41 /* Trick.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452B218BA20E4002E4C41 /* Trick.m */; };
+		1F2452B318BA20E4002E4C41 /* FJVCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452A518BA20E4002E4C41 /* FJVCard.m */; };
+		1F2452B418BA20E4002E4C41 /* FJVDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452A718BA20E4002E4C41 /* FJVDeck.m */; };
+		1F2452B518BA20E4002E4C41 /* FJVHand.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452A918BA20E4002E4C41 /* FJVHand.m */; };
+		1F2452B718BA20E4002E4C41 /* FJVMasterMind.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452AC18BA20E4002E4C41 /* FJVMasterMind.m */; };
+		1F2452B818BA20E4002E4C41 /* FJVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452AE18BA20E4002E4C41 /* FJVPlayer.m */; };
+		1F2452B918BA20E4002E4C41 /* FJVTarabishMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452B018BA20E4002E4C41 /* FJVTarabishMatch.m */; };
+		1F2452BA18BA20E4002E4C41 /* FJVTrick.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452B218BA20E4002E4C41 /* FJVTrick.m */; };
 		1F2452C418BA2113002E4C41 /* InteractiveAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452BD18BA2113002E4C41 /* InteractiveAvatar.m */; };
 		1F2452C518BA2113002E4C41 /* MindAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452BF18BA2113002E4C41 /* MindAvatar.m */; };
 		1F2452C618BA2113002E4C41 /* PlayerAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452C118BA2113002E4C41 /* PlayerAvatar.m */; };
-		1F2452C718BA2113002E4C41 /* TarabishController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452C318BA2113002E4C41 /* TarabishController.m */; };
+		1F2452C718BA2113002E4C41 /* FJVTarabishController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2452C318BA2113002E4C41 /* FJVTarabishController.m */; };
 		1F2452C918BA2166002E4C41 /* TrumpRules.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F2452C818BA2166002E4C41 /* TrumpRules.plist */; };
 /* End PBXBuildFile section */
 
@@ -63,29 +62,28 @@
 		1F24529518BA2027002E4C41 /* TarabishTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TarabishTests-Info.plist"; sourceTree = "<group>"; };
 		1F24529718BA2027002E4C41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1F24529918BA2027002E4C41 /* TarabishTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TarabishTests.m; sourceTree = "<group>"; };
-		1F2452A418BA20E4002E4C41 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
-		1F2452A518BA20E4002E4C41 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
-		1F2452A618BA20E4002E4C41 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
-		1F2452A718BA20E4002E4C41 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
-		1F2452A818BA20E4002E4C41 /* Hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hand.h; sourceTree = "<group>"; };
-		1F2452A918BA20E4002E4C41 /* Hand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hand.m; sourceTree = "<group>"; };
-		1F2452AA18BA20E4002E4C41 /* MasterMind.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MasterMind.cpp; sourceTree = "<group>"; };
-		1F2452AB18BA20E4002E4C41 /* MasterMind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterMind.h; sourceTree = "<group>"; };
-		1F2452AC18BA20E4002E4C41 /* MasterMind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterMind.m; sourceTree = "<group>"; };
-		1F2452AD18BA20E4002E4C41 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		1F2452AE18BA20E4002E4C41 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
-		1F2452AF18BA20E4002E4C41 /* TarabishMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TarabishMatch.h; sourceTree = "<group>"; };
-		1F2452B018BA20E4002E4C41 /* TarabishMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TarabishMatch.m; sourceTree = "<group>"; };
-		1F2452B118BA20E4002E4C41 /* Trick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trick.h; sourceTree = "<group>"; };
-		1F2452B218BA20E4002E4C41 /* Trick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trick.m; sourceTree = "<group>"; };
+		1F2452A418BA20E4002E4C41 /* FJVCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJVCard.h; sourceTree = "<group>"; };
+		1F2452A518BA20E4002E4C41 /* FJVCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJVCard.m; sourceTree = "<group>"; };
+		1F2452A618BA20E4002E4C41 /* FJVDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJVDeck.h; sourceTree = "<group>"; };
+		1F2452A718BA20E4002E4C41 /* FJVDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJVDeck.m; sourceTree = "<group>"; };
+		1F2452A818BA20E4002E4C41 /* FJVHand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJVHand.h; sourceTree = "<group>"; };
+		1F2452A918BA20E4002E4C41 /* FJVHand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJVHand.m; sourceTree = "<group>"; };
+		1F2452AB18BA20E4002E4C41 /* FJVMasterMind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJVMasterMind.h; sourceTree = "<group>"; };
+		1F2452AC18BA20E4002E4C41 /* FJVMasterMind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJVMasterMind.m; sourceTree = "<group>"; };
+		1F2452AD18BA20E4002E4C41 /* FJVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJVPlayer.h; sourceTree = "<group>"; };
+		1F2452AE18BA20E4002E4C41 /* FJVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJVPlayer.m; sourceTree = "<group>"; };
+		1F2452AF18BA20E4002E4C41 /* FJVTarabishMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJVTarabishMatch.h; sourceTree = "<group>"; };
+		1F2452B018BA20E4002E4C41 /* FJVTarabishMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJVTarabishMatch.m; sourceTree = "<group>"; };
+		1F2452B118BA20E4002E4C41 /* FJVTrick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJVTrick.h; sourceTree = "<group>"; };
+		1F2452B218BA20E4002E4C41 /* FJVTrick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJVTrick.m; sourceTree = "<group>"; };
 		1F2452BC18BA2113002E4C41 /* InteractiveAvatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractiveAvatar.h; sourceTree = "<group>"; };
 		1F2452BD18BA2113002E4C41 /* InteractiveAvatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractiveAvatar.m; sourceTree = "<group>"; };
 		1F2452BE18BA2113002E4C41 /* MindAvatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MindAvatar.h; sourceTree = "<group>"; };
 		1F2452BF18BA2113002E4C41 /* MindAvatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MindAvatar.m; sourceTree = "<group>"; };
 		1F2452C018BA2113002E4C41 /* PlayerAvatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerAvatar.h; sourceTree = "<group>"; };
 		1F2452C118BA2113002E4C41 /* PlayerAvatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerAvatar.m; sourceTree = "<group>"; };
-		1F2452C218BA2113002E4C41 /* TarabishController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TarabishController.h; sourceTree = "<group>"; };
-		1F2452C318BA2113002E4C41 /* TarabishController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TarabishController.m; sourceTree = "<group>"; };
+		1F2452C218BA2113002E4C41 /* FJVTarabishController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJVTarabishController.h; sourceTree = "<group>"; };
+		1F2452C318BA2113002E4C41 /* FJVTarabishController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJVTarabishController.m; sourceTree = "<group>"; };
 		1F2452C818BA2166002E4C41 /* TrumpRules.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TrumpRules.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,21 +195,20 @@
 		1F2452A318BA20E4002E4C41 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1F2452A418BA20E4002E4C41 /* Card.h */,
-				1F2452A518BA20E4002E4C41 /* Card.m */,
-				1F2452A618BA20E4002E4C41 /* Deck.h */,
-				1F2452A718BA20E4002E4C41 /* Deck.m */,
-				1F2452A818BA20E4002E4C41 /* Hand.h */,
-				1F2452A918BA20E4002E4C41 /* Hand.m */,
-				1F2452AA18BA20E4002E4C41 /* MasterMind.cpp */,
-				1F2452AB18BA20E4002E4C41 /* MasterMind.h */,
-				1F2452AC18BA20E4002E4C41 /* MasterMind.m */,
-				1F2452AD18BA20E4002E4C41 /* Player.h */,
-				1F2452AE18BA20E4002E4C41 /* Player.m */,
-				1F2452AF18BA20E4002E4C41 /* TarabishMatch.h */,
-				1F2452B018BA20E4002E4C41 /* TarabishMatch.m */,
-				1F2452B118BA20E4002E4C41 /* Trick.h */,
-				1F2452B218BA20E4002E4C41 /* Trick.m */,
+				1F2452A418BA20E4002E4C41 /* FJVCard.h */,
+				1F2452A518BA20E4002E4C41 /* FJVCard.m */,
+				1F2452A618BA20E4002E4C41 /* FJVDeck.h */,
+				1F2452A718BA20E4002E4C41 /* FJVDeck.m */,
+				1F2452A818BA20E4002E4C41 /* FJVHand.h */,
+				1F2452A918BA20E4002E4C41 /* FJVHand.m */,
+				1F2452AB18BA20E4002E4C41 /* FJVMasterMind.h */,
+				1F2452AC18BA20E4002E4C41 /* FJVMasterMind.m */,
+				1F2452AD18BA20E4002E4C41 /* FJVPlayer.h */,
+				1F2452AE18BA20E4002E4C41 /* FJVPlayer.m */,
+				1F2452AF18BA20E4002E4C41 /* FJVTarabishMatch.h */,
+				1F2452B018BA20E4002E4C41 /* FJVTarabishMatch.m */,
+				1F2452B118BA20E4002E4C41 /* FJVTrick.h */,
+				1F2452B218BA20E4002E4C41 /* FJVTrick.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,8 +222,8 @@
 				1F2452BF18BA2113002E4C41 /* MindAvatar.m */,
 				1F2452C018BA2113002E4C41 /* PlayerAvatar.h */,
 				1F2452C118BA2113002E4C41 /* PlayerAvatar.m */,
-				1F2452C218BA2113002E4C41 /* TarabishController.h */,
-				1F2452C318BA2113002E4C41 /* TarabishController.m */,
+				1F2452C218BA2113002E4C41 /* FJVTarabishController.h */,
+				1F2452C318BA2113002E4C41 /* FJVTarabishController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -331,20 +328,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F2452B818BA20E4002E4C41 /* Player.m in Sources */,
-				1F2452B718BA20E4002E4C41 /* MasterMind.m in Sources */,
+				1F2452B818BA20E4002E4C41 /* FJVPlayer.m in Sources */,
+				1F2452B718BA20E4002E4C41 /* FJVMasterMind.m in Sources */,
 				1F2452C518BA2113002E4C41 /* MindAvatar.m in Sources */,
-				1F2452C718BA2113002E4C41 /* TarabishController.m in Sources */,
+				1F2452C718BA2113002E4C41 /* FJVTarabishController.m in Sources */,
 				1F2452C418BA2113002E4C41 /* InteractiveAvatar.m in Sources */,
-				1F2452B918BA20E4002E4C41 /* TarabishMatch.m in Sources */,
-				1F2452B518BA20E4002E4C41 /* Hand.m in Sources */,
-				1F2452B418BA20E4002E4C41 /* Deck.m in Sources */,
-				1F2452BA18BA20E4002E4C41 /* Trick.m in Sources */,
+				1F2452B918BA20E4002E4C41 /* FJVTarabishMatch.m in Sources */,
+				1F2452B518BA20E4002E4C41 /* FJVHand.m in Sources */,
+				1F2452B418BA20E4002E4C41 /* FJVDeck.m in Sources */,
+				1F2452BA18BA20E4002E4C41 /* FJVTrick.m in Sources */,
 				1F24527C18BA2027002E4C41 /* main.m in Sources */,
 				1F2452C618BA2113002E4C41 /* PlayerAvatar.m in Sources */,
 				1F24528318BA2027002E4C41 /* ATAppDelegate.m in Sources */,
-				1F2452B318BA20E4002E4C41 /* Card.m in Sources */,
-				1F2452B618BA20E4002E4C41 /* MasterMind.cpp in Sources */,
+				1F2452B318BA20E4002E4C41 /* FJVCard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +551,7 @@
 				1F24529F18BA2027002E4C41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F2452A018BA2027002E4C41 /* Build configuration list for PBXNativeTarget "TarabishTests" */ = {
 			isa = XCConfigurationList;
@@ -563,6 +560,7 @@
 				1F2452A218BA2027002E4C41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

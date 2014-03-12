@@ -1,20 +1,20 @@
 #import <Cocoa/Cocoa.h>
 
-@class Player;
-@class MasterMind;
+@class FJVPlayer;
+@class FJVMasterMind;
 
-@interface BTPlayerAvatar : NSObject 
+@interface FJVPlayerAvatar : NSObject 
 {
     IBOutlet NSTableView *hand;
     IBOutlet NSTextField *name;
 	IBOutlet NSTextField *callout;
 	
-	Player* player;
+	FJVPlayer* player;
 }
 
 - (id)init;
-- (void)setPlayer:(Player*) aPlayer;
-- (void)setMind:(MasterMind*) aMind;
+- (void)setPlayer:(FJVPlayer*) aPlayer;
+- (void)setMind:(FJVMasterMind*) aMind;
 
 //Avatar Methods
 - (void)handChanged;
