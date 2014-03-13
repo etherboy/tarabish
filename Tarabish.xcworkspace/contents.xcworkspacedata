@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:Mac/Tarabish.xcodeproj">
+      location = "group:ios/Tarabish.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:macos/Tarabish.xcodeproj">
    </FileRef>
 </Workspace>

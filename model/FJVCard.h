@@ -6,7 +6,7 @@
 //  Copyright 2007 AppleTrek. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+@import Foundation;
 
 typedef enum {	TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK,
 				QUEEN, KING, ACE } TCardRank;

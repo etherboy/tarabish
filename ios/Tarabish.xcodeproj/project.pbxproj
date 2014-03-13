@@ -22,6 +22,14 @@
 		1F99397918CE928A005EFA87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F99395818CE928A005EFA87 /* UIKit.framework */; };
 		1F99398118CE928A005EFA87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F99397F18CE928A005EFA87 /* InfoPlist.strings */; };
 		1F99398318CE928A005EFA87 /* TarabishTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F99398218CE928A005EFA87 /* TarabishTests.m */; };
+		1F9939D218D1383C005EFA87 /* FJVCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9939C418D1383C005EFA87 /* FJVCard.m */; };
+		1F9939D318D1383C005EFA87 /* FJVDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9939C618D1383C005EFA87 /* FJVDeck.m */; };
+		1F9939D418D1383C005EFA87 /* FJVHand.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9939C818D1383C005EFA87 /* FJVHand.m */; };
+		1F9939D518D1383C005EFA87 /* FJVMasterMind.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9939CA18D1383C005EFA87 /* FJVMasterMind.m */; };
+		1F9939D618D1383C005EFA87 /* FJVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9939CC18D1383C005EFA87 /* FJVPlayer.m */; };
+		1F9939D718D1383C005EFA87 /* FJVTarabishMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9939CE18D1383C005EFA87 /* FJVTarabishMatch.m */; };
+		1F9939D818D1383C005EFA87 /* FJVTrick.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9939D018D1383C005EFA87 /* FJVTrick.m */; };
+		1F9939D918D1383C005EFA87 /* TrumpRules.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F9939D118D1383C005EFA87 /* TrumpRules.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +63,21 @@
 		1F99397E18CE928A005EFA87 /* TarabishTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TarabishTests-Info.plist"; sourceTree = "<group>"; };
 		1F99398018CE928A005EFA87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1F99398218CE928A005EFA87 /* TarabishTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TarabishTests.m; sourceTree = "<group>"; };
+		1F9939C318D1383C005EFA87 /* FJVCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJVCard.h; sourceTree = "<group>"; };
+		1F9939C418D1383C005EFA87 /* FJVCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJVCard.m; sourceTree = "<group>"; };
+		1F9939C518D1383C005EFA87 /* FJVDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJVDeck.h; sourceTree = "<group>"; };
+		1F9939C618D1383C005EFA87 /* FJVDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJVDeck.m; sourceTree = "<group>"; };
+		1F9939C718D1383C005EFA87 /* FJVHand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJVHand.h; sourceTree = "<group>"; };
+		1F9939C818D1383C005EFA87 /* FJVHand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJVHand.m; sourceTree = "<group>"; };
+		1F9939C918D1383C005EFA87 /* FJVMasterMind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJVMasterMind.h; sourceTree = "<group>"; };
+		1F9939CA18D1383C005EFA87 /* FJVMasterMind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJVMasterMind.m; sourceTree = "<group>"; };
+		1F9939CB18D1383C005EFA87 /* FJVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJVPlayer.h; sourceTree = "<group>"; };
+		1F9939CC18D1383C005EFA87 /* FJVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJVPlayer.m; sourceTree = "<group>"; };
+		1F9939CD18D1383C005EFA87 /* FJVTarabishMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJVTarabishMatch.h; sourceTree = "<group>"; };
+		1F9939CE18D1383C005EFA87 /* FJVTarabishMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJVTarabishMatch.m; sourceTree = "<group>"; };
+		1F9939CF18D1383C005EFA87 /* FJVTrick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJVTrick.h; sourceTree = "<group>"; };
+		1F9939D018D1383C005EFA87 /* FJVTrick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJVTrick.m; sourceTree = "<group>"; };
+		1F9939D118D1383C005EFA87 /* TrumpRules.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TrumpRules.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +137,7 @@
 		1F99395A18CE928A005EFA87 /* Tarabish */ = {
 			isa = PBXGroup;
 			children = (
-				1F99396318CE928A005EFA87 /* FJVAppDelegate.h */,
-				1F99396418CE928A005EFA87 /* FJVAppDelegate.m */,
+				1F9939C218D1383C005EFA87 /* model */,
 				1F99396618CE928A005EFA87 /* Main_iPhone.storyboard */,
 				1F99396918CE928A005EFA87 /* Main_iPad.storyboard */,
 				1F99396C18CE928A005EFA87 /* FJVViewController.h */,
@@ -129,6 +151,8 @@
 		1F99395B18CE928A005EFA87 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1F99396318CE928A005EFA87 /* FJVAppDelegate.h */,
+				1F99396418CE928A005EFA87 /* FJVAppDelegate.m */,
 				1F99395C18CE928A005EFA87 /* Tarabish-Info.plist */,
 				1F99395D18CE928A005EFA87 /* InfoPlist.strings */,
 				1F99396018CE928A005EFA87 /* main.m */,
@@ -153,6 +177,29 @@
 				1F99397F18CE928A005EFA87 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F9939C218D1383C005EFA87 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				1F9939C318D1383C005EFA87 /* FJVCard.h */,
+				1F9939C418D1383C005EFA87 /* FJVCard.m */,
+				1F9939C518D1383C005EFA87 /* FJVDeck.h */,
+				1F9939C618D1383C005EFA87 /* FJVDeck.m */,
+				1F9939C718D1383C005EFA87 /* FJVHand.h */,
+				1F9939C818D1383C005EFA87 /* FJVHand.m */,
+				1F9939C918D1383C005EFA87 /* FJVMasterMind.h */,
+				1F9939CA18D1383C005EFA87 /* FJVMasterMind.m */,
+				1F9939CB18D1383C005EFA87 /* FJVPlayer.h */,
+				1F9939CC18D1383C005EFA87 /* FJVPlayer.m */,
+				1F9939CD18D1383C005EFA87 /* FJVTarabishMatch.h */,
+				1F9939CE18D1383C005EFA87 /* FJVTarabishMatch.m */,
+				1F9939CF18D1383C005EFA87 /* FJVTrick.h */,
+				1F9939D018D1383C005EFA87 /* FJVTrick.m */,
+				1F9939D118D1383C005EFA87 /* TrumpRules.plist */,
+			);
+			name = model;
+			path = ../../model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +282,7 @@
 				1F99396B18CE928A005EFA87 /* Main_iPad.storyboard in Resources */,
 				1F99397018CE928A005EFA87 /* Images.xcassets in Resources */,
 				1F99396818CE928A005EFA87 /* Main_iPhone.storyboard in Resources */,
+				1F9939D918D1383C005EFA87 /* TrumpRules.plist in Resources */,
 				1F99395F18CE928A005EFA87 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,9 +302,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F9939D218D1383C005EFA87 /* FJVCard.m in Sources */,
+				1F9939D618D1383C005EFA87 /* FJVPlayer.m in Sources */,
+				1F9939D718D1383C005EFA87 /* FJVTarabishMatch.m in Sources */,
 				1F99396118CE928A005EFA87 /* main.m in Sources */,
+				1F9939D818D1383C005EFA87 /* FJVTrick.m in Sources */,
 				1F99396518CE928A005EFA87 /* FJVAppDelegate.m in Sources */,
+				1F9939D318D1383C005EFA87 /* FJVDeck.m in Sources */,
 				1F99396E18CE928A005EFA87 /* FJVViewController.m in Sources */,
+				1F9939D418D1383C005EFA87 /* FJVHand.m in Sources */,
+				1F9939D518D1383C005EFA87 /* FJVMasterMind.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +530,7 @@
 				1F99398818CE928A005EFA87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F99398918CE928A005EFA87 /* Build configuration list for PBXNativeTarget "TarabishTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +539,7 @@
 				1F99398B18CE928A005EFA87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

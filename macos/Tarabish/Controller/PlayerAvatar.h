@@ -27,9 +27,7 @@
 - (void)say:(NSString*) gibberish;
 
 //Table Datasource Methods
-- (int)numberOfRowsInTableView:(NSTableView *)aTableView;
+- (NSUInteger)numberOfRowsInTableView:(NSTableView *)aTableView;
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
-
-- (void)dealloc;
 
 @end
