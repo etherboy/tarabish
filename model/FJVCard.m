@@ -35,55 +35,49 @@ const unsigned short cardMask[13] = {	0x1000,
 										0x0002,
 										0x0001 };
 
+@interface FJVCard ()
+
+@end
+
 
 @implementation FJVCard
 
-- (id)initCardWithRank: (TCardRank)inRank suit: (TCardSuit)inSuit
+- (instancetype)initCardWithRank: (TCardRank)aRank suit: (TCardSuit)aSuit
 {
 	self = [super init];
 	
 	if(self != nil)
 	{
-		rank = inRank;
-		suit = inSuit;
+		_rank = aRank;
+		_suit = aSuit;
 	}
 	
 	return self;
 }
 
-- (TCardRank)rank
-{
-	return rank;
-}
-
-- (TCardSuit)suit
-{
-	return suit;
-}
-
 - (int)value: (BOOL)trump
 {
-	return trump ? cardTrumpValue[rank] : cardValue[rank]; 
+	return trump ? cardTrumpValue[self.rank] : cardValue[self.rank];
 }
 
 - (NSString*)description
 {
 	NSMutableString* temp = [NSMutableString string];
-	[temp appendFormat: @"%c%c", cardRankDescShort[rank], cardSuitDescShort[suit]];
+	[temp appendFormat: @"%c%c", cardRankDescShort[self.rank], cardSuitDescShort[self.suit]];
 		
 	return temp;	
 }
 
-+(NSString*)suitDescription: (TCardSuit)aSuit
++(NSString*)suitDescription: (TCardSuit)suit
 {
-	return cardSuitDesc[aSuit];
+	return cardSuitDesc[suit];
 }
 
-+(TCardRank)rankFromCharacter: (char)aCharacter
++(TCardRank)rankFromCharacter: (char)character
 {
 	TCardRank rank = ACE;
 	
-	switch (aCharacter) 
+	switch (character) 
 	{
 		case 'A':
 		case 'K':
@@ -118,10 +112,10 @@ const unsigned short cardMask[13] = {	0x1000,
 	return rank;
 }
 
-+(TCardSuit)suitFromCharacter: (char)aCharacter
++(TCardSuit)suitFromCharacter: (char)character
 {
 	TCardSuit suit = NONE;
-	switch (aCharacter)
+	switch (character)
 	{
 		case 'N':
 		case 'C':

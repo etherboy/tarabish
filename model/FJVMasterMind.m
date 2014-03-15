@@ -13,7 +13,7 @@
 
 @implementation FJVTrumpCallRule
 
--(id)initWithRequiredTrump: (NSString*)reqTrump 
+-(instancetype)initWithRequiredTrump: (NSString*)reqTrump
 		   additionalTrump: (int)addTrump
 	requiredPrimaryOutside: (NSString*)reqPrimary
   additionalPrimaryOutside: (int)addPrimary
@@ -27,44 +27,42 @@
 		int i = 0;
 		
 		for(i = 0; i < [reqTrump length]; i++)
-			requiredTrumpMask |= cardMask[[FJVCard rankFromCharacter: [reqTrump characterAtIndex: i]]];
-		requiredTrumpCount = [reqTrump length];
-		additionalTrump = addTrump;
+			_requiredTrumpMask |= cardMask[[FJVCard rankFromCharacter: [reqTrump characterAtIndex: i]]];
+		_requiredTrumpCount = [reqTrump length];
+		_additionalTrump = addTrump;
 		for(i = 0; i < [reqPrimary length]; i++)
-			requiredPrimaryOutsideMask |= cardMask[[FJVCard rankFromCharacter: [reqPrimary characterAtIndex: i]]];
-		requiredPrimaryOutsideCount = [reqPrimary length];
-		additionalPrimaryOutside = addPrimary;
+			_requiredPrimaryOutsideMask |= cardMask[[FJVCard rankFromCharacter: [reqPrimary characterAtIndex: i]]];
+		_requiredPrimaryOutsideCount = [reqPrimary length];
+		_additionalPrimaryOutside = addPrimary;
 		for(i = 0; i < [reqSecondary length]; i++)
-			requiredSecondaryOutsideMask |= cardMask[[FJVCard rankFromCharacter: [reqSecondary characterAtIndex: i]]];
-		requiredSecondaryOutsideCount = [reqSecondary length];
-		totalOutsidePoints = outsidePoints;
+			_requiredSecondaryOutsideMask |= cardMask[[FJVCard rankFromCharacter: [reqSecondary characterAtIndex: i]]];
+		_requiredSecondaryOutsideCount = [reqSecondary length];
+		_totalOutsidePoints = outsidePoints;
 	}
 	
 	return self;
 }
 
-@synthesize requiredTrumpMask;
-@synthesize requiredTrumpCount;
-@synthesize additionalTrump;
-@synthesize requiredPrimaryOutsideMask;
-@synthesize requiredPrimaryOutsideCount;
-@synthesize additionalPrimaryOutside;
-@synthesize requiredSecondaryOutsideMask;
-@synthesize requiredSecondaryOutsideCount;
-@synthesize totalOutsidePoints;
+@end
+
+@interface FJVMasterMind ()
+{
+    FJVDeck* _deck;
+	NSArray* _trumpCallRules;
+}
 
 @end
 
 @implementation FJVMasterMind
 
--(id)initWithDeck:(FJVDeck*)aDeck trumpCallRules:(NSArray*)aRuleCollection
+-(instancetype)initWithDeck:(FJVDeck*)deck trumpCallRules:(NSArray*)ruleCollection
 {
 	self = [super init];
 	
 	if(self)
 	{
-		deck = aDeck;
-		trumpCallRules = aRuleCollection;
+		_deck = deck;
+		_trumpCallRules = ruleCollection;
 	}
 	
 	return self;
@@ -111,9 +109,9 @@
 			}
 		}
 		
-		for(k = 0; (ruleMatched[i] == -1) && (k < [trumpCallRules count]); ++k)
+		for(k = 0; (ruleMatched[i] == -1) && (k < [_trumpCallRules count]); ++k)
 		{
-			FJVTrumpCallRule* rule = [trumpCallRules objectAtIndex: k];
+			FJVTrumpCallRule* rule = [_trumpCallRules objectAtIndex: k];
 			
 			if((suitStatistics[i].cardRankMask & rule.requiredTrumpMask) == rule.requiredTrumpMask)
 			{
@@ -235,10 +233,10 @@
 			{
 				if((binaryHand[j] & fiftyMask) == fiftyMask)
 				{
-					NSArray* run = [NSArray arrayWithObjects:	[deck cardWithRank: i suit: j], 
-																[deck cardWithRank: i+1 suit: j],
-																[deck cardWithRank: i+2 suit: j],
-																[deck cardWithRank: i+3 suit: j], 
+					NSArray* run = [NSArray arrayWithObjects:	[_deck cardWithRank: i suit: j], 
+																[_deck cardWithRank: i+1 suit: j],
+																[_deck cardWithRank: i+2 suit: j],
+																[_deck cardWithRank: i+3 suit: j], 
 																nil];
 					[runArray addObject: run];
 					
@@ -246,9 +244,9 @@
 				}
 				else if((binaryHand[j] & twentyMask) == twentyMask)
 				{
-					NSArray* run = [NSArray arrayWithObjects:	[deck cardWithRank: i suit: j], 
-																[deck cardWithRank: i+1 suit: j],
-																[deck cardWithRank: i+2 suit: j], 
+					NSArray* run = [NSArray arrayWithObjects:	[_deck cardWithRank: i suit: j], 
+																[_deck cardWithRank: i+1 suit: j],
+																[_deck cardWithRank: i+2 suit: j], 
 																nil];
 					[runArray addObject: run];
 					nextEligable[j] = i+3;

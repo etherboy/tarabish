@@ -6,16 +6,14 @@
 //  Copyright 2007 AppleTrek. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+@import Foundation;
 #import "FJVCard.h"
 
 @interface FJVDeck : NSObject 
 {
-@private
-	NSArray* cards;
 }
 
--(id)init;
+-(instancetype)init;
 -(FJVCard*)cardAtIndex: (int)index;
 -(FJVCard*)cardWithRank:(TCardRank)rank suit:(TCardSuit)suit;
 -(NSUInteger)cardCount;

@@ -78,6 +78,7 @@
 		1F9939CF18D1383C005EFA87 /* FJVTrick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJVTrick.h; sourceTree = "<group>"; };
 		1F9939D018D1383C005EFA87 /* FJVTrick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJVTrick.m; sourceTree = "<group>"; };
 		1F9939D118D1383C005EFA87 /* TrumpRules.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TrumpRules.plist; sourceTree = "<group>"; };
+		1F9939DA18D13CCA005EFA87 /* FJVAvatar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJVAvatar.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +198,7 @@
 				1F9939CF18D1383C005EFA87 /* FJVTrick.h */,
 				1F9939D018D1383C005EFA87 /* FJVTrick.m */,
 				1F9939D118D1383C005EFA87 /* TrumpRules.plist */,
+				1F9939DA18D13CCA005EFA87 /* FJVAvatar.h */,
 			);
 			name = model;
 			path = ../../model;

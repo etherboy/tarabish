@@ -8,40 +8,53 @@
 
 #import "FJVPlayer.h"
 #import "FJVTarabishMatch.h"
+#import "FJVHand.h"
 
 const int MAX_CARDS_IN_HAND = 9;
 const int MAX_CARDS_IN_KITTY = 3;
 
+@interface FJVPlayer ()
+{
+    NSMutableArray* _hand;
+	NSMutableArray* _kitty;
+	FJVTarabishMatch* _game;
+    
+    NSArray* _runs;
+	NSArray* _bella;
+}
+
+@end
+
 @implementation FJVPlayer
 
-- (id)initWithName: (NSString*)aName game: (FJVTarabishMatch*)aGame
+- (instancetype)initWithName: (NSString*)name game: (FJVTarabishMatch*)game
 {
 	self = [super init];
 	
 	if(self!=nil)
 	{
-		name = aName;
-		hand = [[NSMutableArray alloc] init];
-		kitty = [[NSMutableArray alloc] init];
-		game = aGame;
-		avatar = nil; 
+		_name = name;
+		_hand = [[NSMutableArray alloc] init];
+		_kitty = [[NSMutableArray alloc] init];
+		_game = game;
+		_avatar = nil;
 	}
 	
 	return self;
 }
 
--(void)setAvatar: (FJVPlayerAvatar*)anAvatar
+-(NSArray*)hand
 {
-	avatar = anAvatar;
+    return [_hand copy];
 }
 
-- (BOOL)acceptCard: (FJVCard*)aCard
+- (BOOL)acceptCard: (FJVCard*)card
 {
-	[hand addObject: aCard];
+	[_hand addObject: card];
 	
-	BOOL moreCards = [hand count] < MAX_CARDS_IN_HAND;
+	BOOL moreCards = [_hand count] < MAX_CARDS_IN_HAND;
 
-	if(avatar)
+	if(_avatar)
 	{
 		if(!moreCards)
 		{
@@ -49,12 +62,12 @@ const int MAX_CARDS_IN_KITTY = 3;
 			//Select Kitty
 			for(i = 0; i < MAX_CARDS_IN_KITTY; i++)
 			{
-				int cardIndex = rand()%[hand count];
-				[kitty addObject: [hand objectAtIndex: cardIndex]];	
-				[hand removeObjectAtIndex: cardIndex];
+				int cardIndex = rand()%[_hand count];
+				[_kitty addObject: [_hand objectAtIndex: cardIndex]];
+				[_hand removeObjectAtIndex: cardIndex];
 			}
 			
-			[avatar handChanged];
+			[_avatar handChanged];
 		}
 	}
 	
@@ -63,34 +76,24 @@ const int MAX_CARDS_IN_KITTY = 3;
 
 - (void)clearHand
 {
-	[hand removeAllObjects];
-	[kitty removeAllObjects];
-}
-
-- (NSString*)name
-{
-	return [NSString stringWithString: name];
-}
-
-- (NSArray*)hand
-{
-	return [NSArray arrayWithArray: hand];
+	[_hand removeAllObjects];
+	[_kitty removeAllObjects];
 }
 
 -(void)callTrumpOpen: (BOOL)forced
 {
-	[avatar callTrumpOpen: forced];
+	[_avatar callTrumpOpen: forced];
 }
 
 -(void)callTrumpClose: (TCardSuit)trump
 {
-	[[game currentHand] trumpCalled: trump];
+	[[_game currentHand] trumpCalled: trump];
 }
 
 -(void)trumpCalled
 {
-	[hand addObjectsFromArray: kitty];
-	[avatar handChanged];
+	[_hand addObjectsFromArray: _kitty];
+	[_avatar handChanged];
 }
 
 -(void)playCardOpen

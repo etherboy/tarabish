@@ -10,20 +10,32 @@
 #import "FJVDeck.h"
 #import "FJVPlayer.h"
 
+@interface FJVHand ()
+{
+    TCardSuit _trump;
+	int _dealerIndex;
+	int _trumpCallerIndex;
+	int _activePlayerIndex;
+	NSArray* _players;
+	FJVDeck* _deck;
+}
+
+@end
+
 @implementation FJVHand
 
--(id)initWithPlayers: (NSArray*)aPlayers deck: (FJVDeck*)aDeck
+-(instancetype)initWithPlayers: (NSArray*)players deck: (FJVDeck*)deck
 {
 	self = [super init];
 	
 	if(self!=nil)
 	{
-		trump = NONE;
-		dealerIndex = -1;
-		trumpCallerIndex = -1;
-		activePlayerIndex = -1;
-		players = aPlayers;
-		deck = aDeck;
+		_trump = NONE;
+		_dealerIndex = -1;
+		_trumpCallerIndex = -1;
+		_activePlayerIndex = -1;
+		_players = players;
+		_deck = deck;
 	}
 	
 	return self;
@@ -31,26 +43,26 @@
 
 -(void)initiateHand: (int)inDealerIndex
 {
-	dealerIndex = inDealerIndex;
+	_dealerIndex = inDealerIndex;
 	
 	[self dealCards];
 	
-	activePlayerIndex = (dealerIndex+1)%[players count];
-	[[players objectAtIndex: activePlayerIndex] callTrumpOpen: NO];
+	_activePlayerIndex = (_dealerIndex+1)%[_players count];
+	[[_players objectAtIndex: _activePlayerIndex] callTrumpOpen: NO];
 }
 
 -(void)dealCards
 {
 	NSUInteger i = 0;
-	NSMutableArray* eligablePlayers = [NSMutableArray arrayWithArray: players];
+	NSMutableArray* eligablePlayers = [NSMutableArray arrayWithArray: _players];
 	
-	NSUInteger cardCount = [deck cardCount];
+	NSUInteger cardCount = [_deck cardCount];
 	
 	for(i = 0; i < cardCount; i++)
 	{
 		int luckyIndex = rand() % [eligablePlayers count];		
 		FJVPlayer* luckyPlayer = [eligablePlayers objectAtIndex: luckyIndex];
-		if(![luckyPlayer acceptCard: [deck cardAtIndex: i]])
+		if(![luckyPlayer acceptCard: [_deck cardAtIndex: i]])
 		{
 			[eligablePlayers removeObjectAtIndex: luckyIndex];
 		}
@@ -61,26 +73,26 @@
 {
 	if(aTrump != NONE)
 	{
-		trump = aTrump;
-		trumpCallerIndex = activePlayerIndex;
+		_trump = aTrump;
+		_trumpCallerIndex = _activePlayerIndex;
 		
-		[players makeObjectsPerformSelector: @selector(trumpCalled)];
+		[_players makeObjectsPerformSelector: @selector(trumpCalled)];
 		
-		activePlayerIndex = (dealerIndex+1)%[players count];
+		_activePlayerIndex = (_dealerIndex+1)%[_players count];
 		
 		//		m_rPlayers[m_iActivePlayerIndex].PlayCardOpen();
 	}
 	else
 	{
-		activePlayerIndex = (activePlayerIndex+1)%[players count];
+		_activePlayerIndex = (_activePlayerIndex+1)%[_players count];
 		
-		[[players objectAtIndex: activePlayerIndex] callTrumpOpen: activePlayerIndex == dealerIndex];
+		[[_players objectAtIndex: _activePlayerIndex] callTrumpOpen: _activePlayerIndex == _dealerIndex];
 	}
 }
 
 -(int)dealerIndex
 {
-	return dealerIndex;
+	return _dealerIndex;
 }
 
 @end

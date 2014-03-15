@@ -8,29 +8,22 @@
 
 @import Foundation;
 #import "FJVCard.h"
-#import "PlayerAvatar.h"
+#import "FJVAvatar.h"
 
 @class FJVTarabishMatch;
 
 @interface FJVPlayer : NSObject 
 {
-@private
-	NSString* name;
-	NSMutableArray* hand;
-	NSMutableArray* kitty;
-	FJVTarabishMatch* game;
-	FJVPlayerAvatar* avatar;
-	
-	NSArray* runs;
-	NSArray* bella;
 }
 
--(id)initWithName: (NSString*)aName game: (FJVTarabishMatch*)aGame;
--(void)setAvatar: (FJVPlayerAvatar*)anAvatar;
--(BOOL)acceptCard: (FJVCard*)aCard;
+@property (nonatomic, readonly) NSString* name;
+@property (nonatomic, readonly) NSArray* hand;
+@property (nonatomic) id<FJVAvatar> avatar;
+
+-(instancetype)initWithName: (NSString*)name game: (FJVTarabishMatch*)game;
+
+-(BOOL)acceptCard: (FJVCard*)card;
 -(void)clearHand;
--(NSString*)name;
--(NSArray*)hand;
 
 -(void)callTrumpOpen: (BOOL)forced;
 -(void)callTrumpClose: (TCardSuit)trump;

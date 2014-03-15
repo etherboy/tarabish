@@ -90,6 +90,7 @@
 		1F9939AF18D12DDD005EFA87 /* FJVTarabishMatch.m */ = {isa = PBXFileReference; lastKnownFileType = file; name = FJVTarabishMatch.m; path = ../../../model/FJVTarabishMatch.m; sourceTree = "<group>"; };
 		1F9939B018D12DDD005EFA87 /* FJVTrick.h */ = {isa = PBXFileReference; lastKnownFileType = file; name = FJVTrick.h; path = ../../../model/FJVTrick.h; sourceTree = "<group>"; };
 		1F9939B118D12DDD005EFA87 /* FJVTrick.m */ = {isa = PBXFileReference; lastKnownFileType = file; name = FJVTrick.m; path = ../../../model/FJVTrick.m; sourceTree = "<group>"; };
+		1F9939DB18D2849A005EFA87 /* FJVAvatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FJVAvatar.h; path = ../../../model/FJVAvatar.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +200,7 @@
 		1F2452A318BA20E4002E4C41 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1F9939DB18D2849A005EFA87 /* FJVAvatar.h */,
 				1F9939A418D12DDD005EFA87 /* FJVCard.h */,
 				1F9939A518D12DDD005EFA87 /* FJVCard.m */,
 				1F9939A618D12DDD005EFA87 /* FJVDeck.h */,

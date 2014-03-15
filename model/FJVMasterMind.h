@@ -15,18 +15,9 @@
 
 @interface FJVTrumpCallRule : NSObject
 {
-	unsigned short requiredTrumpMask;
-	int requiredTrumpCount;
-	int additionalTrump;
-	unsigned short requiredPrimaryOutsideMask;
-	int requiredPrimaryOutsideCount;
-	int additionalPrimaryOutside;
-	unsigned short requiredSecondaryOutsideMask;
-	int requiredSecondaryOutsideCount;
-	int totalOutsidePoints;
 }
 	
--(id)initWithRequiredTrump: (NSString*)reqTrump 
+-(instancetype)initWithRequiredTrump: (NSString*)reqTrump
 		   additionalTrump: (int)addTrump
 	requiredPrimaryOutside: (NSString*)reqPrimary
   additionalPrimaryOutside: (int)addPrimary
@@ -48,11 +39,9 @@
 
 @interface FJVMasterMind : NSObject
 {
-	FJVDeck* deck;
-	NSArray* trumpCallRules;
 }
 
--(id)initWithDeck:(FJVDeck*)aDeck trumpCallRules:(NSArray*)aRuleCollection;
+-(instancetype)initWithDeck:(FJVDeck*)deck trumpCallRules:(NSArray*)ruleCollection;
 
 -(TCardSuit)callTrumpForPlayer:(FJVPlayer*)player forced:(BOOL)forced;
 

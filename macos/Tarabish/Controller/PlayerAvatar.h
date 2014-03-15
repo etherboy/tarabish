@@ -1,9 +1,10 @@
 #import <Cocoa/Cocoa.h>
+#import "FJVAvatar.h"
 
 @class FJVPlayer;
 @class FJVMasterMind;
 
-@interface FJVPlayerAvatar : NSObject 
+@interface FJVPlayerAvatar : NSObject  <FJVAvatar>
 {
     IBOutlet NSTableView *hand;
     IBOutlet NSTextField *name;

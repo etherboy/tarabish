@@ -8,9 +8,15 @@
 
 #import "FJVDeck.h"
 
+@interface FJVDeck ()
+{
+    NSArray* cards;
+}
+@end
+
 @implementation FJVDeck
 
--(id)init
+-(instancetype)init
 {
 	self = [super init];
 	

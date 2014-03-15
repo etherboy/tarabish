@@ -6,27 +6,20 @@
 //  Copyright 2007 AppleTrek. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+@import Foundation;
 #import "FJVCard.h"
 
-@class FJVPlayer;
 @class FJVDeck;
-
 
 @interface FJVHand : NSObject 
 {
-	TCardSuit trump;
-	int dealerIndex;
-	int trumpCallerIndex;
-	int activePlayerIndex;
-	NSArray* players;
-	FJVDeck* deck;
 }
 
--(id)initWithPlayers: (NSArray*)aPlayers deck: (FJVDeck*)aDeck ;
+-(instancetype)initWithPlayers: (NSArray*)players deck: (FJVDeck*)deck ;
 -(void)dealCards;
 -(void)trumpCalled: (TCardSuit)trump;
 -(void)initiateHand: (int)aDealerIndex;
--(int)dealerIndex;
+
+@property (nonatomic, readonly) int dealerIndex;
 
 @end

@@ -7,26 +7,38 @@
 //
 
 #import "FJVTarabishMatch.h"
+#import "FJVDeck.h"
+#import "FJVHand.h"
+#import "FJVPlayer.h"
+#import "FJVMasterMind.h"
+
+@interface FJVTarabishMatch ()
+{
+    FJVDeck* _deck;
+	NSMutableArray* _hands;
+}
+
+@end
 
 
 @implementation FJVTarabishMatch
 
-- (id)init
+- (instancetype)init
 {
 	self = [super init];
 	
 	if(self!=nil)
 	{
-		deck = [[FJVDeck alloc] init];
+		_deck = [[FJVDeck alloc] init];
 		
-		players = [[NSArray alloc] initWithObjects: 
+		_players = [[NSArray alloc] initWithObjects: 
 				   [[FJVPlayer alloc] initWithName: @"Fred" game: self],
 				   [[FJVPlayer alloc] initWithName: @"Mary" game: self],
 				   [[FJVPlayer alloc] initWithName: @"Mike" game: self],
 				   [[FJVPlayer alloc] initWithName: @"Lucy" game: self],
 				   nil];
 		
-		hands = [[NSMutableArray alloc] init];
+		_hands = [[NSMutableArray alloc] init];
 		
 		NSArray* rawRules = [NSArray arrayWithContentsOfFile: [[NSBundle mainBundle] 
 											 pathForResource: @"TrumpRules" ofType: @"plist"] ]; 
@@ -45,7 +57,7 @@
 			[cookedRules addObject: rule];
 		}
 		
-		mind = [[FJVMasterMind alloc] initWithDeck: deck trumpCallRules: cookedRules];
+		_mind = [[FJVMasterMind alloc] initWithDeck: _deck trumpCallRules: cookedRules];
 		
 		srand((unsigned int)time(0));
 	}
@@ -55,33 +67,23 @@
 
 - (void)beginHand
 {
-	[players makeObjectsPerformSelector: @selector(clearHand)];
-	FJVHand* newHand = [[FJVHand alloc] initWithPlayers: players deck: deck];
+	[_players makeObjectsPerformSelector: @selector(clearHand)];
+	FJVHand* newHand = [[FJVHand alloc] initWithPlayers: _players deck: _deck];
 	
 	int dealerIndex = 0;
 	
-	if([hands count] != 0)
+	if([_hands count] != 0)
 	{
-		dealerIndex = ([[hands objectAtIndex: [hands count] - 1] dealerIndex]+1)%[players count];
+		dealerIndex = ([[_hands objectAtIndex: [_hands count] - 1] dealerIndex]+1)%[_players count];
 	}
 	
 	[newHand initiateHand: dealerIndex]; 
-	[hands addObject: newHand];
+	[_hands addObject: newHand];
 }
 
 - (FJVHand*)currentHand
 {
-	return [hands objectAtIndex: [hands count] - 1];
-}
-
-- (NSArray*)players
-{
-	return [NSArray arrayWithArray: players];
-}
-
-- (FJVMasterMind*)masterMind
-{
-	return mind;
+	return [_hands objectAtIndex: [_hands count] - 1];
 }
 
 @end

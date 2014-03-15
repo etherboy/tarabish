@@ -17,19 +17,17 @@ const unsigned short cardMask[13];
 
 @interface FJVCard : NSObject 
 {
-@private
-	TCardRank rank;
-	TCardSuit suit;
 }
 
-- (id)initCardWithRank: (TCardRank)inRank suit: (TCardSuit)inSuit;
-- (TCardRank)rank;
-- (TCardSuit)suit;
+@property (nonatomic, readonly) TCardRank rank;
+@property (nonatomic, readonly) TCardSuit suit;
+
+- (instancetype)initCardWithRank: (TCardRank)aRank suit: (TCardSuit)aSuit;
 - (int)value: (BOOL)trump;
 - (NSString*)description;
 
-+(NSString*)suitDescription: (TCardSuit)aSuit;
-+(TCardRank)rankFromCharacter: (char)aCharacter;
-+(TCardSuit)suitFromCharacter: (char)aCharacter;
++(NSString*)suitDescription: (TCardSuit)suit;
++(TCardRank)rankFromCharacter: (char)character;
++(TCardSuit)suitFromCharacter: (char)character;
 
 @end
