@@ -12,11 +12,8 @@
 @class FJVHand;
 
 @interface FJVTarabishMatch : NSObject 
-{
-}
 
 - (instancetype)init;
-
 - (void)beginHand;
 
 @property (nonatomic, readonly) FJVHand* currentHand;

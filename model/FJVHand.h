@@ -12,8 +12,6 @@
 @class FJVDeck;
 
 @interface FJVHand : NSObject 
-{
-}
 
 -(instancetype)initWithPlayers: (NSArray*)players deck: (FJVDeck*)deck ;
 -(void)dealCards;

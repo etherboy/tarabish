@@ -10,8 +10,6 @@
 #import "FJVCard.h"
 
 @interface FJVDeck : NSObject 
-{
-}
 
 -(instancetype)init;
 -(FJVCard*)cardAtIndex: (int)index;

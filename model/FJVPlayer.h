@@ -13,8 +13,6 @@
 @class FJVTarabishMatch;
 
 @interface FJVPlayer : NSObject 
-{
-}
 
 @property (nonatomic, readonly) NSString* name;
 @property (nonatomic, readonly) NSArray* hand;

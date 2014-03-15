@@ -14,8 +14,6 @@
 
 
 @interface FJVTrumpCallRule : NSObject
-{
-}
 	
 -(instancetype)initWithRequiredTrump: (NSString*)reqTrump
 		   additionalTrump: (int)addTrump
@@ -38,8 +36,6 @@
 
 
 @interface FJVMasterMind : NSObject
-{
-}
 
 -(instancetype)initWithDeck:(FJVDeck*)deck trumpCallRules:(NSArray*)ruleCollection;
 

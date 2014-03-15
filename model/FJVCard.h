@@ -15,14 +15,12 @@ typedef enum { DIAMOND, SPADE, HEART, CLUB, NONE } TCardSuit;
 
 const unsigned short cardMask[13]; 
 
-@interface FJVCard : NSObject 
-{
-}
+@interface FJVCard : NSObject
 
 @property (nonatomic, readonly) TCardRank rank;
 @property (nonatomic, readonly) TCardSuit suit;
 
-- (instancetype)initCardWithRank: (TCardRank)aRank suit: (TCardSuit)aSuit;
+- (instancetype)initCardWithRank: (TCardRank)rank suit: (TCardSuit)suit;
 - (int)value: (BOOL)trump;
 - (NSString*)description;
 

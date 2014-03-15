@@ -27,16 +27,14 @@
 {
 	self = [super init];
 	
-	if(self!=nil)
+	if(self != nil)
 	{
 		_deck = [[FJVDeck alloc] init];
 		
-		_players = [[NSArray alloc] initWithObjects: 
-				   [[FJVPlayer alloc] initWithName: @"Fred" game: self],
-				   [[FJVPlayer alloc] initWithName: @"Mary" game: self],
-				   [[FJVPlayer alloc] initWithName: @"Mike" game: self],
-				   [[FJVPlayer alloc] initWithName: @"Lucy" game: self],
-				   nil];
+		_players = @[ [[FJVPlayer alloc] initWithName: @"Fred" game: self],
+                      [[FJVPlayer alloc] initWithName: @"Mary" game: self],
+                      [[FJVPlayer alloc] initWithName: @"Mike" game: self],
+                      [[FJVPlayer alloc] initWithName: @"Lucy" game: self]];
 		
 		_hands = [[NSMutableArray alloc] init];
 		

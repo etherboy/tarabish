@@ -42,14 +42,14 @@ const unsigned short cardMask[13] = {	0x1000,
 
 @implementation FJVCard
 
-- (instancetype)initCardWithRank: (TCardRank)aRank suit: (TCardSuit)aSuit
+- (instancetype)initCardWithRank: (TCardRank)rank suit: (TCardSuit)suit
 {
 	self = [super init];
 	
 	if(self != nil)
 	{
-		_rank = aRank;
-		_suit = aSuit;
+		_rank = rank;
+		_suit = suit;
 	}
 	
 	return self;
@@ -62,10 +62,7 @@ const unsigned short cardMask[13] = {	0x1000,
 
 - (NSString*)description
 {
-	NSMutableString* temp = [NSMutableString string];
-	[temp appendFormat: @"%c%c", cardRankDescShort[self.rank], cardSuitDescShort[self.suit]];
-		
-	return temp;	
+	return [NSString stringWithFormat: @"%c%c", cardRankDescShort[self.rank], cardSuitDescShort[self.suit]];
 }
 
 +(NSString*)suitDescription: (TCardSuit)suit
