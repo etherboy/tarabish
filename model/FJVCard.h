@@ -8,10 +8,7 @@
 
 @import Foundation;
 
-typedef enum {	TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK,
-				QUEEN, KING, ACE } TCardRank;
-
-typedef enum { DIAMOND, SPADE, HEART, CLUB, NONE } TCardSuit;
+#include "FJVCardDefs.h"
 
 const unsigned short cardMask[13]; 
 

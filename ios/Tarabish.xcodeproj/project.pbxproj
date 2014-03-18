@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F16111B18D50BDB0017341D /* FJVCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F16111A18D50BDB0017341D /* FJVCardView.m */; };
 		1F99395518CE928A005EFA87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F99395418CE928A005EFA87 /* Foundation.framework */; };
 		1F99395718CE928A005EFA87 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F99395618CE928A005EFA87 /* CoreGraphics.framework */; };
 		1F99395918CE928A005EFA87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F99395818CE928A005EFA87 /* UIKit.framework */; };
@@ -43,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F16111918D50BDB0017341D /* FJVCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJVCardView.h; sourceTree = "<group>"; };
+		1F16111A18D50BDB0017341D /* FJVCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJVCardView.m; sourceTree = "<group>"; };
+		1F16111C18D51E430017341D /* FJVCardDefs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJVCardDefs.h; sourceTree = "<group>"; };
 		1F99395118CE928A005EFA87 /* Tarabish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tarabish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F99395418CE928A005EFA87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1F99395618CE928A005EFA87 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -105,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F16111818D50B190017341D /* view */ = {
+			isa = PBXGroup;
+			children = (
+				1F16111918D50BDB0017341D /* FJVCardView.h */,
+				1F16111A18D50BDB0017341D /* FJVCardView.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
 		1F99394818CE928A005EFA87 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +151,7 @@
 		1F99395A18CE928A005EFA87 /* Tarabish */ = {
 			isa = PBXGroup;
 			children = (
+				1F16111818D50B190017341D /* view */,
 				1F9939C218D1383C005EFA87 /* model */,
 				1F99396618CE928A005EFA87 /* Main_iPhone.storyboard */,
 				1F99396918CE928A005EFA87 /* Main_iPad.storyboard */,
@@ -184,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				1F9939C318D1383C005EFA87 /* FJVCard.h */,
+				1F16111C18D51E430017341D /* FJVCardDefs.h */,
 				1F9939C418D1383C005EFA87 /* FJVCard.m */,
 				1F9939C518D1383C005EFA87 /* FJVDeck.h */,
 				1F9939C618D1383C005EFA87 /* FJVDeck.m */,
@@ -304,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F16111B18D50BDB0017341D /* FJVCardView.m in Sources */,
 				1F9939D218D1383C005EFA87 /* FJVCard.m in Sources */,
 				1F9939D618D1383C005EFA87 /* FJVPlayer.m in Sources */,
 				1F9939D718D1383C005EFA87 /* FJVTarabishMatch.m in Sources */,
