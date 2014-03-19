@@ -146,12 +146,16 @@ const CGFloat kFJVStandardHeight = 100.0;
     
     if(self.faceUp)
     {
-        [_label drawAtPoint: [self offset]];
+        CGRect labelBounds;
+        labelBounds.origin = self.offset;
+        labelBounds.size = _label.size;
+        
+        [_label drawInRect: labelBounds];
     
         CGContextTranslateCTM(context, self.bounds.size.width, self.bounds.size.height);
         CGContextRotateCTM(context, M_PI);
     
-        [_label drawAtPoint: [self offset]];
+        [_label drawInRect: labelBounds];
     }
     else
     {
